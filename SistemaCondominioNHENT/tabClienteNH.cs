@@ -9,7 +9,7 @@ namespace SistemaCondominioNHENT
     {
         public virtual int id { get; set; }
         public virtual string nome { get; set; }
-        public virtual string sexo { get; set; }
+        //public virtual string sexo { get; set; }
         public virtual string cpf { get; set; }
         public virtual DateTime dt_nascimento { get; set; }
         public virtual string email { get; set; }
