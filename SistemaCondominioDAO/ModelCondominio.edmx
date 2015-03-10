@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_CondominioModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BD_CondominioModelStoreContainer">
+          <EntitySet Name="tabAla" EntityType="BD_CondominioModel.Store.tabAla" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tabAlaQuarto" EntityType="BD_CondominioModel.Store.tabAlaQuarto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tabCliente" EntityType="BD_CondominioModel.Store.tabCliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tabCondominio" EntityType="BD_CondominioModel.Store.tabCondominio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tabTelefone" EntityType="BD_CondominioModel.Store.tabTelefone" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tabAlaQuarto_tabAla" Association="BD_CondominioModel.Store.FK_tabAlaQuarto_tabAla">
+            <End Role="tabAla" EntitySet="tabAla" />
+            <End Role="tabAlaQuarto" EntitySet="tabAlaQuarto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabCondominio_tabAlaQuarto" Association="BD_CondominioModel.Store.FK_tabCondominio_tabAlaQuarto">
+            <End Role="tabAlaQuarto" EntitySet="tabAlaQuarto" />
+            <End Role="tabCondominio" EntitySet="tabCondominio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabCondominio_tabCliente" Association="BD_CondominioModel.Store.FK_tabCondominio_tabCliente">
+            <End Role="tabCliente" EntitySet="tabCliente" />
+            <End Role="tabCondominio" EntitySet="tabCondominio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTelefone_tabCliente" Association="BD_CondominioModel.Store.FK_tabTelefone_tabCliente">
+            <End Role="tabCliente" EntitySet="tabCliente" />
+            <End Role="tabTelefone" EntitySet="tabTelefone" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tabAla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="numeroAla" Type="int" />
+        </EntityType>
+        <EntityType Name="tabAlaQuarto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_ala" Type="int" />
+          <Property Name="Nquarto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tabCliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="sexo" Type="varchar" MaxLength="1" />
+          <Property Name="cpf" Type="varchar" MaxLength="50" />
+          <Property Name="dt_nascimento" Type="datetime" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+          <Property Name="obs" Type="ntext" />
+          <Property Name="escolaridade" Type="varchar" MaxLength="50" />
+          <Property Name="sitOcupacional" Type="varchar" MaxLength="50" />
+          <Property Name="dt_cadastro" Type="datetime" />
+          <Property Name="user_cadastro" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tabCondominio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="id_AlaQ" Type="int" />
+          <Property Name="dataEntrada" Type="datetime" />
+          <Property Name="tempo" Type="varchar" MaxLength="50" />
+          <Property Name="dt_cadastro" Type="datetime" />
+          <Property Name="user_cadastro" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tabTelefone">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="telefone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_tabAlaQuarto_tabAla">
+          <End Role="tabAla" Type="BD_CondominioModel.Store.tabAla" Multiplicity="0..1" />
+          <End Role="tabAlaQuarto" Type="BD_CondominioModel.Store.tabAlaQuarto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabAla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabAlaQuarto">
+              <PropertyRef Name="id_ala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabCondominio_tabAlaQuarto">
+          <End Role="tabAlaQuarto" Type="BD_CondominioModel.Store.tabAlaQuarto" Multiplicity="0..1" />
+          <End Role="tabCondominio" Type="BD_CondominioModel.Store.tabCondominio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabAlaQuarto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabCondominio">
+              <PropertyRef Name="id_AlaQ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabCondominio_tabCliente">
+          <End Role="tabCliente" Type="BD_CondominioModel.Store.tabCliente" Multiplicity="0..1" />
+          <End Role="tabCondominio" Type="BD_CondominioModel.Store.tabCondominio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabCondominio">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTelefone_tabCliente">
+          <End Role="tabCliente" Type="BD_CondominioModel.Store.tabCliente" Multiplicity="0..1" />
+          <End Role="tabTelefone" Type="BD_CondominioModel.Store.tabTelefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabTelefone">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_CondominioModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BD_CondominioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tabAla" EntityType="BD_CondominioModel.tabAla" />
+          <EntitySet Name="tabAlaQuarto" EntityType="BD_CondominioModel.tabAlaQuarto" />
+          <EntitySet Name="tabCliente" EntityType="BD_CondominioModel.tabCliente" />
+          <EntitySet Name="tabCondominio" EntityType="BD_CondominioModel.tabCondominio" />
+          <EntitySet Name="tabTelefone" EntityType="BD_CondominioModel.tabTelefone" />
+          <AssociationSet Name="FK_tabAlaQuarto_tabAla" Association="BD_CondominioModel.FK_tabAlaQuarto_tabAla">
+            <End Role="tabAla" EntitySet="tabAla" />
+            <End Role="tabAlaQuarto" EntitySet="tabAlaQuarto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabCondominio_tabAlaQuarto" Association="BD_CondominioModel.FK_tabCondominio_tabAlaQuarto">
+            <End Role="tabAlaQuarto" EntitySet="tabAlaQuarto" />
+            <End Role="tabCondominio" EntitySet="tabCondominio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabCondominio_tabCliente" Association="BD_CondominioModel.FK_tabCondominio_tabCliente">
+            <End Role="tabCliente" EntitySet="tabCliente" />
+            <End Role="tabCondominio" EntitySet="tabCondominio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tabTelefone_tabCliente" Association="BD_CondominioModel.FK_tabTelefone_tabCliente">
+            <End Role="tabCliente" EntitySet="tabCliente" />
+            <End Role="tabTelefone" EntitySet="tabTelefone" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tabAla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroAla" Type="Int32" />
+          <NavigationProperty Name="tabAlaQuarto" Relationship="BD_CondominioModel.FK_tabAlaQuarto_tabAla" FromRole="tabAla" ToRole="tabAlaQuarto" />
+        </EntityType>
+        <EntityType Name="tabAlaQuarto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_ala" Type="Int32" />
+          <Property Name="Nquarto" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tabAla" Relationship="BD_CondominioModel.FK_tabAlaQuarto_tabAla" FromRole="tabAlaQuarto" ToRole="tabAla" />
+          <NavigationProperty Name="tabCondominio" Relationship="BD_CondominioModel.FK_tabCondominio_tabAlaQuarto" FromRole="tabAlaQuarto" ToRole="tabCondominio" />
+        </EntityType>
+        <EntityType Name="tabCliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="cpf" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dt_nascimento" Type="DateTime" />
+          <Property Name="email" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="obs" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="escolaridade" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sitOcupacional" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dt_cadastro" Type="DateTime" />
+          <Property Name="user_cadastro" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tabCondominio" Relationship="BD_CondominioModel.FK_tabCondominio_tabCliente" FromRole="tabCliente" ToRole="tabCondominio" />
+          <NavigationProperty Name="tabTelefone" Relationship="BD_CondominioModel.FK_tabTelefone_tabCliente" FromRole="tabCliente" ToRole="tabTelefone" />
+        </EntityType>
+        <EntityType Name="tabCondominio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="id_AlaQ" Type="Int32" />
+          <Property Name="dataEntrada" Type="DateTime" />
+          <Property Name="tempo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dt_cadastro" Type="DateTime" />
+          <Property Name="user_cadastro" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tabAlaQuarto" Relationship="BD_CondominioModel.FK_tabCondominio_tabAlaQuarto" FromRole="tabCondominio" ToRole="tabAlaQuarto" />
+          <NavigationProperty Name="tabCliente" Relationship="BD_CondominioModel.FK_tabCondominio_tabCliente" FromRole="tabCondominio" ToRole="tabCliente" />
+        </EntityType>
+        <EntityType Name="tabTelefone">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="telefone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tabCliente" Relationship="BD_CondominioModel.FK_tabTelefone_tabCliente" FromRole="tabTelefone" ToRole="tabCliente" />
+        </EntityType>
+        <Association Name="FK_tabAlaQuarto_tabAla">
+          <End Role="tabAla" Type="BD_CondominioModel.tabAla" Multiplicity="0..1" />
+          <End Role="tabAlaQuarto" Type="BD_CondominioModel.tabAlaQuarto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabAla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabAlaQuarto">
+              <PropertyRef Name="id_ala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabCondominio_tabAlaQuarto">
+          <End Role="tabAlaQuarto" Type="BD_CondominioModel.tabAlaQuarto" Multiplicity="0..1" />
+          <End Role="tabCondominio" Type="BD_CondominioModel.tabCondominio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabAlaQuarto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabCondominio">
+              <PropertyRef Name="id_AlaQ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabCondominio_tabCliente">
+          <End Role="tabCliente" Type="BD_CondominioModel.tabCliente" Multiplicity="0..1" />
+          <End Role="tabCondominio" Type="BD_CondominioModel.tabCondominio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabCondominio">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tabTelefone_tabCliente">
+          <End Role="tabCliente" Type="BD_CondominioModel.tabCliente" Multiplicity="0..1" />
+          <End Role="tabTelefone" Type="BD_CondominioModel.tabTelefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tabCliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tabTelefone">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_CondominioModelStoreContainer" CdmEntityContainer="BD_CondominioEntities">
+          <EntitySetMapping Name="tabAla"><EntityTypeMapping TypeName="BD_CondominioModel.tabAla"><MappingFragment StoreEntitySet="tabAla">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="numeroAla" ColumnName="numeroAla" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tabAlaQuarto"><EntityTypeMapping TypeName="BD_CondominioModel.tabAlaQuarto"><MappingFragment StoreEntitySet="tabAlaQuarto">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="id_ala" ColumnName="id_ala" />
+            <ScalarProperty Name="Nquarto" ColumnName="Nquarto" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tabCliente"><EntityTypeMapping TypeName="BD_CondominioModel.tabCliente"><MappingFragment StoreEntitySet="tabCliente">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nome" ColumnName="nome" />
+            <ScalarProperty Name="sexo" ColumnName="sexo" />
+            <ScalarProperty Name="cpf" ColumnName="cpf" />
+            <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="obs" ColumnName="obs" />
+            <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+            <ScalarProperty Name="sitOcupacional" ColumnName="sitOcupacional" />
+            <ScalarProperty Name="dt_cadastro" ColumnName="dt_cadastro" />
+            <ScalarProperty Name="user_cadastro" ColumnName="user_cadastro" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tabCondominio"><EntityTypeMapping TypeName="BD_CondominioModel.tabCondominio"><MappingFragment StoreEntitySet="tabCondominio">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+            <ScalarProperty Name="id_AlaQ" ColumnName="id_AlaQ" />
+            <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
+            <ScalarProperty Name="tempo" ColumnName="tempo" />
+            <ScalarProperty Name="dt_cadastro" ColumnName="dt_cadastro" />
+            <ScalarProperty Name="user_cadastro" ColumnName="user_cadastro" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tabTelefone"><EntityTypeMapping TypeName="BD_CondominioModel.tabTelefone"><MappingFragment StoreEntitySet="tabTelefone">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+            <ScalarProperty Name="telefone" ColumnName="telefone" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModelCondominio" ZoomLevel="85">
+        <EntityTypeShape EntityType="BD_CondominioModel.tabAla" Width="1.5" PointX="1.5" PointY="10.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_CondominioModel.tabAlaQuarto" Width="1.5" PointX="0.75" PointY="7.75" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_CondominioModel.tabCliente" Width="1.5" PointX="0.75" PointY="2" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_CondominioModel.tabCondominio" Width="1.5" PointX="3" PointY="2.375" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_CondominioModel.tabTelefone" Width="1.5" PointX="3" PointY="6.375" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="BD_CondominioModel.FK_tabAlaQuarto_tabAla" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.875" PointY="10.875" />
+          <ConnectorPoint PointX="1.875" PointY="9.7302864583333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="BD_CondominioModel.FK_tabCondominio_tabAlaQuarto" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.75" />
+          <ConnectorPoint PointX="2.625" PointY="7.375" />
+          <ConnectorPoint PointX="2.625" PointY="3.74974609375" />
+          <ConnectorPoint PointX="3" PointY="3.74974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="BD_CondominioModel.FK_tabCondominio_tabCliente" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.999873046875" />
+          <ConnectorPoint PointX="3" PointY="2.999873046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="BD_CondominioModel.FK_tabTelefone_tabCliente" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.4563892243589729" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="5.7724636592600937" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="5.890314789457852" />
+          <ConnectorPoint PointX="2.8125" PointY="6.0188892243589729" />
+          <ConnectorPoint PointX="2.8125" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="3" PointY="7.2689925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

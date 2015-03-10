@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="71e498df-ac27-49a6-b19a-39ae36f91275" name="UMLClassDiagram1" linkedPackageId="13db1d6a-f125-494b-97ae-c728077a9824" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="76964aeb-7e9a-4448-bc6b-6e3f35204a5b">
+      <profileInstance Id="a4f38c7b-4bad-4a33-bd4f-148f4c0c4d45" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="37e2789d-bb58-4294-8016-16533dcc1694">
+      <profileInstance Id="e7aff16c-effb-48d0-9ed9-4451ed4b78be" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9cf834bd-cb6f-4eb7-b69d-b76dfa2862c9" name="ALA" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7d6e77db-b878-40b1-9a56-f7127f51a5ec" />
+        <targetEnds>
+          <association Id="10f024f6-e165-4183-b3a2-018469e31299" isDerived="false" sourceEndRoleName="ALA" targetEndRoleName="AlaQuarto" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a06452b2-f5b6-4366-9820-31a7cf34c7ff" LastKnownName="AlaQuarto" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd093dd3-7dbe-46f3-8871-629ebf400813" name="ALA" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ff05f343-b191-48b5-b540-4a33d4ff739e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e0037fe4-b99d-4dee-b33e-20693fa4b899" name="AlaQuarto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="058a89b9-ec97-46e6-a313-6af992b5d469" name="Lower" value="0">
+                      <elementDefinition Id="2f604b72-60f7-4077-be04-a8d5b85c5a96" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3138418d-57bc-47dc-9121-b27d822dd493" name="Upper" value="N">
+                      <elementDefinition Id="57668dbd-da62-4ddf-879b-4806219c657d" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="ab81cce4-422b-4272-825c-f3b78c46d89b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d0580437-403b-4724-819a-4d8274c8f533" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="f5a0e198-48b9-4214-8f45-b7b5a3afc73b" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="89bdbff3-23cb-418b-8256-96fff64310ba" />
+          </property>
+          <property Id="5b870e54-621e-44f1-9ae0-f27e6a8abaec" name="numeroAla" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2ce9a401-efdf-4a35-89f3-ea0466e08c43" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="39d63ebe-371f-4e3f-ae23-4908e8ea4049" name="Inserção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83373a7f-f3bb-4e0c-a210-3b85b5e09885" />
+          </operation>
+          <operation Id="3ab41611-a755-4dc5-ba14-f445bd0f88c3" name="Remoção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3678100-a544-4451-bc1f-f5b6bf4f123e" />
+          </operation>
+          <operation Id="956880d1-fb9a-4e9a-969d-c02fefb42121" name="Alteração" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b30f8f18-3e50-4633-802d-ee3ee94e9fb7" />
+          </operation>
+          <operation Id="61e1d603-0c8c-4e5c-a4e1-1ad98923111d" name="Consulta" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="611b6b2a-6f23-4bd1-88e9-b0e0ae0c17bf" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a06452b2-f5b6-4366-9820-31a7cf34c7ff" name="AlaQuarto" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e7762304-02f8-495a-b424-8603fc7a442b" />
+        <targetEnds>
+          <association Id="62d0fe8c-2d9a-4a90-b1ff-3de49e9da3ce" isDerived="false" sourceEndRoleName="AlaQuarto" targetEndRoleName="Condominio" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d0a48427-3cd5-4edb-9976-175a2d3d0a4e" LastKnownName="Condominio" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c780fb7-7af9-4af9-ba6b-863ff15c35fe" name="AlaQuarto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eb54786f-ee47-4c55-939b-0b732d5937a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b4a75ae-1f23-4be2-8054-66543d92ba5e" name="Condominio" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="9c6b81d8-cd0c-47b6-bfc7-6fd9cd9375e4" name="Lower" value="0">
+                      <elementDefinition Id="6b574331-54fa-4d4f-8223-440f5ae0fcb8" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="cb79eaeb-1f95-4e22-8ec9-719cb92e43fd" name="Upper" value="N">
+                      <elementDefinition Id="14e90b15-a205-4bbd-b7fc-0a9432ea09ec" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="421fb1ed-271a-441c-bc6d-70ca21312ead" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e9b0bdd9-d683-44df-ace0-5bb4a2030f8f" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c2036299-6870-42f1-8a5f-f7434acf9097" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="587ab02a-d7bb-4f1d-9e27-10d64757caf0" />
+          </property>
+          <property Id="d4db9402-7b19-4d84-b5cf-22415a958052" name="id_ala" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c7798c84-26cd-47d5-8453-086f89ff17b4" />
+          </property>
+          <property Id="a62d751b-3400-41ac-87de-51f28fe8c876" name="Nquarto" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6dfb2151-bf0c-4bc4-bd3f-a12bd7a3ff11" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="eb82aa3f-2e40-423c-b760-b890e3a92cd4" name="Remoção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9eac0ad0-2fdd-4a52-8227-09fb00bbde06" />
+          </operation>
+          <operation Id="c7de1985-7cc3-4141-9c97-04b54245c2a4" name="Inserção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b7af6a99-2b61-4c58-9f1b-ec404d2cfd2e" />
+          </operation>
+          <operation Id="944521d3-b83a-4d5e-9ff6-a67882ef6eee" name="Alteração" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b13985a8-9cee-4bab-a406-3b98f071f0de" />
+          </operation>
+          <operation Id="3044ec80-5298-4809-813f-8d18cbaaf023" name="Consulta" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba032a38-8d69-45d5-ad6c-caa816c35d8e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="60541bd2-043d-454d-b837-a98bfea19ade" name="Cliente" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c5b1b50d-9cd8-446e-a83a-bf1b291fcf5b" />
+        <targetEnds>
+          <association Id="ed846f60-897d-47a3-a382-656a97e8bb7f" isDerived="false" sourceEndRoleName="Cliente" targetEndRoleName="Telefone" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e5946e1d-aac7-4c1b-a549-b740c67e5ecb" LastKnownName="Telefone" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="64b76b3b-5659-47ad-ac7f-4469f28f372c" name="Cliente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="406b958c-6181-4b13-b562-1b86480c2916" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cc2b2153-0fe4-4f08-ae6d-7c86de5a4c61" name="Telefone" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="481a9b4c-85e8-4b5a-ab10-33d9127a75a3" name="Lower" value="0">
+                      <elementDefinition Id="4f2e103f-7771-4151-848e-3cbfb98fb3df" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d0f27a31-64c1-4600-a6cb-20c783bf37fd" name="Upper" value="N">
+                      <elementDefinition Id="6975e1bb-dbde-44d0-b4ba-19ad4ec5a54d" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="18209253-5fb7-4be6-82d6-70fe6ee09fbc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="835f0dd8-807d-40cc-b76b-5adcb8d291fd" />
+          </association>
+          <association Id="879ee79a-b945-4512-b52e-71b8788367df" isDerived="false" sourceEndRoleName="Cliente" targetEndRoleName="Condominio" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d0a48427-3cd5-4edb-9976-175a2d3d0a4e" LastKnownName="Condominio" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="51ad8af7-48c1-4f80-a51d-23ba0d6df076" name="Cliente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c1ced7ba-b3b7-47f7-af32-304b4ccddd9f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="57bd2fcb-3278-4119-ac14-c5c85226ffe5" name="Condominio" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="76bad5bd-4a12-4da7-a01d-387dc30f8637" name="Lower" value="0">
+                      <elementDefinition Id="e89299b4-6544-49df-b954-070f49eac59e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="59de4b36-887b-4601-b654-8812b505275a" name="Upper" value="N">
+                      <elementDefinition Id="dfd5783d-0007-4e44-93d4-a7f96731b6ad" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="49f09abb-59b1-4f96-9826-bb189d562e1b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bebf15da-6f12-494c-83c9-6647b5064e44" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="779a62dc-2c20-45fb-966d-d329331fd5f8" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9b7f6484-f7cf-4add-ae83-1243e99fec6e" />
+          </property>
+          <property Id="d0c5384f-e659-4cd7-8a59-4864553a7f45" name="nome" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="87e374aa-e044-4a71-9d71-fe3ddcd6d4e2" />
+          </property>
+          <property Id="4d2068f6-cf6f-4697-8d39-6600efd4e82d" name="dt_nascimento" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f46cc8fc-dbfe-433a-90e9-9126b26f02de" />
+          </property>
+          <property Id="24af0b44-298e-4707-885a-2ac8a84a421e" name="escolaridade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dbd6545c-4f53-4a47-9684-91a4a10ed9b3" />
+          </property>
+          <property Id="8f8274ff-1db2-44c4-8b59-c01d1765ba5a" name="observacao" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="68d8b933-b440-4634-88fb-20a9822fbe3f" />
+          </property>
+          <property Id="17d8f3dd-08e1-408a-8ca2-ea84daff8a32" name="email" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c952fd38-9d51-45a1-a87a-10b66cb39202" />
+          </property>
+          <property Id="585c45b4-f3cc-47d6-a7e1-e2efd2153514" name="dt_Cadastro" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="89b646a1-ed21-4637-9ee2-204e8abec57f" />
+          </property>
+          <property Id="22a370f7-fe9d-4df7-9554-c63ab23d3cae" name="user_Cadastro" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ecf12ac-c259-4c84-ba1e-53a7c9cc6cc4" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="46647cbf-6b69-4b94-bfd5-74e85265bcdf" name="Remoção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="df984aea-eb5a-4cc2-a436-8963d605300b" />
+          </operation>
+          <operation Id="afff13c7-b7a1-49cc-8a3d-01ecea6f18f4" name="Inserção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e405749c-2d7d-453d-b24d-5778c8b8bcd6" />
+          </operation>
+          <operation Id="27928225-44d7-4e16-b9e8-7ee7a79b9ba5" name="Alteração" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fc10fd74-7c7a-4ff7-a5f2-426f2f7023e9" />
+          </operation>
+          <operation Id="b9aeeccf-3299-48b7-9646-216738ad3936" name="Consulta" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="063b92b4-f723-4877-a4af-e5860e6f5e9d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d0a48427-3cd5-4edb-9976-175a2d3d0a4e" name="Condominio" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9e5ccdf5-b5ae-4f4b-bca8-7c4c07d19181" />
+        <ownedAttributesInternal>
+          <property Id="b44a7c34-6211-4288-819a-5ebbc4e84a15" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dfcc316b-5806-417e-b436-ba86b21d1ba5" />
+          </property>
+          <property Id="bb4fa5d7-794a-4293-8584-ed582b6d7fb3" name="id_cliente" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="84f54d2a-a4ab-4ba2-93cf-cec889addacf" />
+          </property>
+          <property Id="20e593f2-3f15-45ec-b8af-25cd2d0857e9" name="id_Qala" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff539fab-42e6-4b38-b80e-660e5e410754" />
+          </property>
+          <property Id="380143f1-fb89-40b1-af8c-bea221fb0d2e" name="dataEntrada" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="568ffd85-5827-48cd-8f8e-182b0eb0d341" />
+          </property>
+          <property Id="a054960f-7fbe-43c7-91b6-ee13c77c0b31" name="tempo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dc41f8e4-c069-49c8-958e-1efede27c317" />
+          </property>
+          <property Id="8bd1938f-daa8-4ce3-a173-bb405f94bfdd" name="dt_cadastro" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5ff4c23d-bb25-4caf-8332-e872c7a99a87" />
+          </property>
+          <property Id="f1c3c34e-ab40-4828-a6c9-0ef68e74a086" name="user_cadastro" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4594c053-c071-4f21-b8f6-400fdf829d55" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4a43d758-00e6-4d83-84ea-89b7e7130b2c" name="Remoção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e73bd7a2-daab-42a2-af95-c37111796499" />
+          </operation>
+          <operation Id="8677e7e9-4b29-4a73-b250-69b2ad504a62" name="Inserção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="84773212-abdf-4c8f-b892-6d2a8413ab86" />
+          </operation>
+          <operation Id="61746e59-ad8a-46f0-ad09-a90e718cc4f5" name="Alteração" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0fed5646-3ece-4873-9fe2-206c00a4ed53" />
+          </operation>
+          <operation Id="b403e88c-c2f8-4367-8871-e1f73991a6e8" name="Consulta" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="153c9ec9-66ff-4aec-96e7-153654c6910b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e5946e1d-aac7-4c1b-a549-b740c67e5ecb" name="Telefone" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4bc2e2b-9c71-4507-a024-31c59a501135" />
+        <ownedAttributesInternal>
+          <property Id="f8c2fc07-fed9-446a-96a5-14b043fec363" name="id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e365e8fb-0df1-4d45-9cdf-6715844da836" />
+          </property>
+          <property Id="4d004acf-68b3-44f4-837e-ed4ecddba959" name="id_cliente" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a29c0339-42b8-4eab-9e4f-9bc6b26af89d" />
+          </property>
+          <property Id="f35d200d-3e3c-49b6-b6c8-9beeac4cdce2" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="139c56cd-38c3-407e-a4f0-67f10d391d85" />
+          </property>
+          <property Id="783e1804-6a31-43d0-925c-b9e512a9f985" name="telefone" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a7f3fc61-8cbc-47f0-96d4-48f152ac775b" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="148b626b-b177-4897-bee3-d29bde259f83" name="Remoção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1d18183-50ed-4c9b-acd0-eedee794bbd7" />
+          </operation>
+          <operation Id="3ea31c2b-2a45-48f6-beb7-0eafdb476c54" name="Inserção" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="412e39de-8b39-49eb-b842-d1b7a47b7409" />
+          </operation>
+          <operation Id="4344f43e-e9d2-43c5-95bd-346f374d5503" name="Alteração" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="22780e1e-eb74-455a-9a11-c2f0ae93cd6b" />
+          </operation>
+          <operation Id="cd786690-09bd-46d1-9ed7-5d2c52ea32eb" name="Consulta" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="87a240e4-591a-46fd-bcc9-f196502847eb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="13db1d6a-f125-494b-97ae-c728077a9824" name="UML_DiagramaDeClasse">
+    <elementDefinition Id="1063c1b8-3c36-42c8-9562-864bef3d45e9" />
+  </package>
+</logicalClassDesignerModel>
